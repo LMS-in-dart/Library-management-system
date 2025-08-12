@@ -208,15 +208,15 @@ class Librarian extends Member {
 }
 void showAdminMenu() {
 
-  print("╔══════════════════════════════════╗");
-  print("║            Admin Menu            ║");
-  print("╠══════════════════════════════════╣");
-  print("║ 1. Add book                      ║");
-  print("║ 2. Remove book                   ║");
-  print("║ 3. Search book                   ║");
-  print("║ 4. View borrowed books           ║");
-  print("║ 0. Exit                          ║");
-  print("╚══════════════════════════════════╝");
+  print("╔═════════════════════════════════════╗");
+  print("║              Admin Menu             ║");
+  print("╠═════════════════════════════════════╣");
+  print("║ 1. Add book (coming soon)           ║");
+  print("║ 2. Remove book (coming soon)        ║");
+  print("║ 3. Search book                      ║");
+  print("║ 4. View borrowed books (coming soon)║");
+  print("║ 0. Exit                             ║");
+  print("╚═════════════════════════════════════╝");
 
   print("Enter your choice: ");
 
@@ -237,6 +237,21 @@ void showAdminMenu() {
     case 3:
       print("Searching for a book...");
       searchAdmin();
+
+          print("Are you done? (yes/no)");
+    String done = stdin.readLineSync()!;
+    done.toLowerCase();
+
+    while ( done == "yes") {
+    print("Goodbye from sherch book");
+    showAdminMenu();
+    break;
+    }
+    while ( done == "no") {
+    print("Enter the name of the book you want to search for:");
+    showAdminMenu();
+    break;
+    }
       break;
 
     case 4:
@@ -252,20 +267,5 @@ void showAdminMenu() {
     default:
       print("Please enter a valid number (1-5).");
   }
-
-    print("Are you done? (yes/no)");
-    String done = stdin.readLineSync()!;
-    done.toLowerCase();
-
-    while ( done == "yes") {
-    print("Goodbye from sherch book");
-    showAdminMenu();
-    break;
-    }
-    while ( done == "no") {
-    print("Enter the name of the book you want to search for:");
-    showAdminMenu();
-    break;
-    }
     }
 }
